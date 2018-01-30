@@ -7,16 +7,6 @@ import (
 	"time"
 )
 
-/*
-    srand(time(NULL));
-    uint32_t r_ip = recv_ack_lissten_ip ? inet_addr(recv_ack_lissten_ip) : (rand() % 100000000) + 1;
-    uint32_t r_port = (0 == recv_ack_listen_port) ? recv_ack_listen_port : (rand() % 100000000) + 1;
-    uint32_t r_pid = getpid();
-    uint64_t time_off_set = 1513353600000;  //2017/12/16 00:00:00
-    uint32_t machine_num = r_ip * r_port * r_pid * ((rand() % 100000000) + 1);  //(机器码是否由用户自己填写，给24位使用例如001、002、003等).这里暂时是根据ip进程等生成
-	flake_ = new emilir::flake((const uint8_t*)(&machine_num), 22, 10, 32, time_off_set);
-*/
-
 type Flake interface {
 	Generate() uint64
 }
